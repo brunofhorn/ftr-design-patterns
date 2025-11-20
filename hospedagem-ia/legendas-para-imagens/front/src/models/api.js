@@ -14,4 +14,14 @@ async function translate(englishCaption) {
   }).then((resp) => resp.json());
 }
 
-export { generateCaption, translate };
+async function convertToAudio(portugueseCaption) {
+  return fetch("http://localhost:5000/text_to_audio", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ text: portugueseCaption[0]["translation_text"] }),
+  }).then((resp) => resp.json());
+}
+
+export { generateCaption, translate, convertToAudio };
