@@ -6,4 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.2",
+    "optimum>=2.0.0",
+    "scipy>=1.16.3",
+    "transformers>=4.57.1",
 ]
